@@ -1,0 +1,20 @@
+{
+  "name": "boity-portal",
+  "version": "1.0.0",
+  "description": "Boity Studio — Discover Another World",
+  "main": "serve.js",
+  "scripts": {
+    "start": "node serve.js",
+    "dev": "node serve.js",
+    "serve": "node serve.js"
+  },
+  "keywords": [
+    "boity",
+    "studio",
+    "cinema",
+    "digital",
+    "ai"
+  ],
+  "author": "Boity Studio",
+  "license": "ISC"
+}
