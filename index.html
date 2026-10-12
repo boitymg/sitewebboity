@@ -1267,13 +1267,14 @@
     .drawer-overlay {
       position: fixed;
       inset: 0;
-      z-index: 50;
+      z-index: 200;
       background: rgba(8, 7, 6, .96);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
       opacity: 0;
       pointer-events: none;
-      transition: opacity .35s ease;
+      visibility: hidden;
+      transition: opacity .35s ease, visibility .35s ease;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -1285,6 +1286,7 @@
     .drawer-overlay.is-open {
       opacity: 1;
       pointer-events: auto;
+      visibility: visible;
     }
     .drawer-header {
       display: flex;
@@ -1556,6 +1558,34 @@
         text-align: center;
         white-space: nowrap;
         border-radius: 999px;
+      }
+
+      /* MODAL & DRAWER ON MOBILE */
+      .drawer-overlay {
+        padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom)) 16px;
+      }
+      .drawer-header {
+        padding-bottom: 16px;
+      }
+      .drawer-title {
+        font-size: 11.5px;
+        letter-spacing: .08em;
+      }
+      .drawer-close {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 16px;
+      }
+      .drawer-content {
+        margin-top: 10px;
+        gap: 24px;
+      }
+      .drawer-nav button {
+        font-size: 19px;
+        min-height: 40px;
+        padding: 6px 0;
       }
 
       /* PORTAL & CANVAS ON MOBILE */
@@ -2414,7 +2444,7 @@
     .video-lightbox {
       position: fixed;
       inset: 0;
-      z-index: 100;
+      z-index: 300;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -5679,19 +5709,23 @@
       function openMenu() {
         menuDrawer.classList.add('is-open');
         menuDrawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
       function closeMenu() {
         menuDrawer.classList.remove('is-open');
         menuDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
       }
 
       function openClientsShowcase() {
         clientsDrawer.classList.add('is-open');
         clientsDrawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
       function closeClientsShowcase() {
         clientsDrawer.classList.remove('is-open');
         clientsDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
       }
 
       menuBtn.addEventListener('click', openMenu);
