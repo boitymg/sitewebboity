@@ -909,7 +909,7 @@
     /* RESPONSIVE: UNDER 768px */
     @media (max-width: 767.98px) {
       .experience[data-universe="about"] {
-        --header-h: calc(max(10px, env(safe-area-inset-top)) + 84px);
+        --header-h: calc(max(10px, env(safe-area-inset-top)) + 108px);
         --footer-h: 0px;
         --pad-x: 16px;
       }
@@ -2689,7 +2689,7 @@
     @media (max-width: 767.98px) {
       .experience[data-universe="work"] {
         --pad-x: 14px;
-        --header-h: calc(max(10px, env(safe-area-inset-top)) + 84px);
+        --header-h: calc(max(10px, env(safe-area-inset-top)) + 108px);
         --footer-h: 0px;
       }
       .experience[data-universe="work"] .universe-content {
@@ -2851,7 +2851,7 @@
       }
     }
 
-    @media (max-height: 800px) {
+    @media (min-width: 768px) and (max-height: 800px) {
       .experience[data-universe="work"] {
         --header-h: clamp(70px, 10vh, 88px);
         --footer-h: clamp(40px, 5vh, 52px);
@@ -3483,7 +3483,7 @@
       .experience[data-universe="contact"] .universe-content {
         display: flex !important;
         flex-direction: column !important;
-        inset: calc(var(--sat, 0px) + 68px) 16px 0 16px !important;
+        inset: calc(max(10px, env(safe-area-inset-top)) + 84px) 16px 0 16px !important;
         padding-bottom: calc(var(--sab, 0px) + 36px) !important;
         overflow-y: auto !important;
         overscroll-behavior: contain !important;
@@ -3546,11 +3546,11 @@
     /* RESPONSIVE MOBILE : < 680px */
     @media (max-width: 680px) {
       .experience[data-universe="contact"] {
-        --contact-header-h: calc(max(10px, env(safe-area-inset-top)) + 84px);
+        --contact-header-h: calc(max(10px, env(safe-area-inset-top)) + 108px);
         --contact-footer-h: 44px;
       }
       .experience[data-universe="contact"] .universe-content {
-        inset: calc(var(--sat, 0px) + 94px) 12px 0 12px !important;
+        inset: calc(max(10px, env(safe-area-inset-top)) + 108px) 12px 0 12px !important;
         padding-bottom: calc(var(--sab, 0px) + 40px) !important;
         gap: 18px !important;
       }
